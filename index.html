@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookIt! - Simple Recipes for Young Cooks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #ff6f61;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+        }
+        .hero {
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            height: 300px;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: 3rem;
+        }
+        .cta-button {
+            background-color: #fff;
+            color: #ff6f61;
+            padding: 1rem 2rem;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #ffe0e0;
+        }
+        .interactive-section, .featured-recipes {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .interactive-section h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .interactive-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .interactive-section label, .interactive-section select, .interactive-section button {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .recipe-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            display: inline-block;
+            width: 250px;
+        }
+        .recipe-card img {
+            width: 100%;
+            height: auto;
+        }
+        .recipe-card .card-content {
+            padding: 1rem;
+        }
+        .recipe-card .card-content h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .recipe-card .card-content p {
+            color: #666;
+        }
+        .footer {
+            background-color: #ff6f61;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Find a Recipe</a>
+            <a href="#">Recipe Collection</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to CookIt!</h1>
+        <button class="cta-button" onclick="startRecipeFinder()">Get Started</button>
+    </section>
+
+    <section class="interactive-section" id="recipe-finder">
+        <h2>Find Your Perfect Recipe</h2>
+        <form id="recipe-form">
+            <label for="meal-type">What type of meal are you looking for?</label>
+            <select id="meal-type">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snack">Snack</option>
+            </select>
+
+            <label for="dietary-restrictions">Do you have any dietary restrictions?</label>
+            <select id="dietary-restrictions">
+                <option value="none">None</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="gluten-free">Gluten-Free</option>
+                <option value="nut-free">Nut-Free</option>
+            </select>
+
+            <label for="time-available">How much time do you have?</label>
+            <select id="time-available">
+                <option value="under-30">Under 30 minutes</option>
+                <option value="30-60">30-60 minutes</option>
+                <option value="over-60">Over 60 minutes</option>
+            </select>
+
+            <label for="ingredients">What ingredients do you have?</label>
+            <select id="ingredients">
+                <option value="chicken">Chicken</option>
+                <option value="pasta">Pasta</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="cheese">Cheese</option>
+            </select>
+
+            <button type="button" onclick="findRecipe()">Find My Recipe</button>
+        </form>
+
+        <div id="recipe-results" style="display: none; margin-top: 2rem;">
+            <h3>Suggested Recipes</h3>
+            <div id="recipes-container"></div>
+        </div>
+    </section>
+
+    <section class="featured-recipes">
+        <h2>Featured Recipes</h2>
+        <div class="recipe-card">
+            <img src="recipe1.jpg" alt="Recipe 1">
+            <div class="card-content">
+                <h3>Easy Pancakes</h3>
+                <p>Fluffy and delicious pancakes that are quick to make!</p>
+                <a href="#">See Recipe</a>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <img src="recipe2.jpg" alt="Recipe 2">
+            <div class="card-content">
+                <h3>Chicken Stir Fry</h3>
+                <p>A tasty and colorful stir fry with simple ingredients.</p>
+                <a href="#">See Recipe</a>
+            </div>
+        </div>
+        <!-- Add more recipe cards as needed -->
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 CookIt! All rights reserved.</p>
+    </footer>
+
+    <script>
+        const recipes = [
+            { title: "Easy Pancakes", type: "breakfast", restrictions: "none", time: "under-30", ingredients: ["pasta"] },
+            { title: "Chicken Stir Fry", type: "dinner", restrictions: "none", time: "30-60", ingredients: ["chicken", "vegetables"] },
+            { title: "Vegetarian Pasta", type: "lunch", restrictions: "vegetarian", time: "30-60", ingredients: ["pasta", "vegetables"] },
+            { title: "Cheese Quesadillas", type: "snack", restrictions: "none", time: "under-30", ingredients: ["cheese"] },
+            // Add more recipes as needed
+        ];
+
+        function startRecipeFinder() {
+            document.getElementById('recipe-finder').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function findRecipe() {
+            const mealType = document.getElementById('meal-type').value;
+            const dietaryRestrictions = document.getElementById('dietary-restrictions').value;
+            const timeAvailable = document.getElementById('time-available').value;
+            const ingredients = Array.from(document.getElementById('ingredients').selectedOptions).map(option => option.value);
+
+            const filteredRecipes = recipes.filter(recipe => 
+                recipe.type === mealType &&
+                (recipe.restrictions === dietaryRestrictions || dietaryRestrictions === 'none') &&
+                recipe.time === timeAvailable &&
+                ingredients.some(ingredient => recipe.ingredients.includes(ingredient))
+            );
+
+            displayRecipes(filteredRecipes);
+        }
+
+        function displayRecipes(recipes) {
+            const recipesContainer = document.getElementById('recipes-container');
+            recipesContainer.innerHTML = '';
+
+            if (recipes.length === 0) {
+                recipesContainer.innerHTML = '<p>No recipes found based on your selection.</p>';
+            } else {
+                recipes.forEach(recipe => {
+                    const recipeCard = document.createElement('div');
+                    recipeCard.className = 'recipe-card';
+                    
+                    recipeCard.innerHTML = `
+                        <img src="placeholder.jpg" alt="${recipe.title}">
+                        <div class="card-content">
+                            <h3>${recipe.title}</h3>
+                            <p>${recipe.description || 'Delicious and easy to make!'}</p>
+                            <a href="#">See Recipe</a>
+                        </div>
+                    `;
+                    
+                    recipesContainer.appendChild(recipeCard);
+                });
+            }
+
+            document.getElementById('recipe-results').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
