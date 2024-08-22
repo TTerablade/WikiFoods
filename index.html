@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookIt! - Simple Recipes for Young Cooks</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .button-group button {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            background-color: red;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button-group button.selected {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Find a Recipe</a>
+            <a href="recipe_collection.html">Recipe Collection</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Welcome to CookIt!</h1>
+        <button class="cta-button" onclick="startRecipeFinder()">Get Started</button>
+    </section>
+    <section class="interactive-section" id="recipe-finder">
+        <h2>Find Your Perfect Recipe</h2>
+        <form id="recipe-form">
+            <label for="meal-type">What type of meal are you looking for?</label>
+            <select id="meal-type">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snack">Snack</option>
+            </select>
+            <label for="dietary-restrictions">Do you have any dietary restrictions?</label>
+            <select id="dietary-restrictions">
+                <option value="none">None</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="gluten-free">Gluten-Free</option>
+                <option value="nut-free">Nut-Free</option>
+            </select>
+            <label for="time-available">How much time do you have?</label>
+            <select id="time-available">
+                <option value="under-30">Under 30 minutes</option>
+                <option value="30-60">30-60 minutes</option>
+                <option value="over-60">Over 60 minutes</option>
+            </select>
+            <label for="ingredients">What ingredients do you have?</label>
+            <div id="ingredients" class="button-group">
+                <button type="button" data-value="chicken">Chicken</button>
+                <button type="button" data-value="pasta">Pasta</button>
+                <button type="button" data-value="vegetables">Vegetables</button>
+                <button type="button" data-value="cheese">Cheese</button>
+                <button type="button" data-value="flour">Flour</button>
+                <button type="button" data-value="milk">Milk</button>
+                <button type="button" data-value="eggs">Eggs</button>
+                <button type="button" data-value="sugar">Sugar</button>
+                <button type="button" data-value="beef">Beef</button>
+                <button type="button" data-value="pork">Pork</button>
+                <button type="button" data-value="Salt">Salt</button>
+                <button type="button" data-value="Garlic Powder">Garlic Powder</button>
+            </div>
+            <button type="button" onclick="findRecipe()">Find My Recipe</button>
+        </form>
+        <div id="recipe-results" style="display: none; margin-top: 2rem;">
+            <h3>Suggested Recipes</h3>
+            <div id="recipes-container"></div>
+        </div>
+    </section>
+    <section class="featured-recipes">
+        <h2>Featured Recipes</h2>
+        <div class="recipe-card">
+            <img src="images/easypancakes.png" alt="Recipe 1">
+            <div class="card-content">
+                <h3>Easy Pancakes</h3>
+                <p>Fluffy and delicious pancakes that are quick to make!</p>
+                <a href="#">See Recipe</a>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <img src="images/chickenstirfry.png" alt="Recipe 2">
+            <div class="card-content">
+                <h3>Chicken Stir Fry</h3>
+                <p>A tasty and colorful stir fry with simple ingredients.</p>
+                <a href="#">See Recipe</a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 CookIt! All rights reserved.</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
