@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Collection - Wikifoods!</title>
+    <title>Recipe Collection - WikiFoods!</title>
     <link rel="stylesheet" href="main.css">
     <style>
         body {
@@ -21,6 +21,33 @@
             text-align: center;
             border-bottom: 5px solid #ff6f61;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .header .nav-links {
+            margin-top: 1rem;
+        }
+
+        .header .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            font-size: 1em;
+        }
+
+        .header .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff6f61;
+            padding: 1rem;
         }
 
         .gallery {
@@ -73,11 +100,19 @@
         .recipe-card a:hover {
             color: #e55f50;
         }
+
+        .footer {
+            padding: 1rem;
+            text-align: center;
+            background-color: #ffb74d;
+            color: white;
+            border-top: 5px solid #ff6f61;
+        }
     </style>
 </head>
 <body>
     <header class="header">
-        <img src="wikifoods.png" alt="WikiFoods Logo" class="logo">
+        <img src="images/wikifoods.png" alt="WikiFoods Logo" class="logo">
         <nav class="nav-links">
             <a href="index.html">Home</a>
             <a href="find_recipe.html">Find a Recipe</a>
@@ -86,8 +121,7 @@
             <a href="contact.html">Contact</a>
         </nav>
     </header>
-        <h1>Recipe Collection</h1>
-    </header>
+    <h1>Recipe Collection</h1>
     <section class="gallery">
         <div class="recipe-card">
             <img src="images/easypancakes.png" alt="Easy Pancakes">
@@ -106,7 +140,7 @@
             </div>
         </div>
         <div class="recipe-card">
-            <img src="recipe3.png" alt="Vegetarian Pasta">
+            <img src="images/vegetarianpasta.png" alt="Vegetarian Pasta">
             <div class="card-content">
                 <h3>Vegetarian Pasta</h3>
                 <p>A delightful pasta dish with fresh vegetables.</p>
@@ -114,7 +148,7 @@
             </div>
         </div>
         <div class="recipe-card">
-            <img src="recipe4.png" alt="Cheese Quesadillas">
+            <img src="images/cheesequesadillas.png" alt="Cheese Quesadillas">
             <div class="card-content">
                 <h3>Cheese Quesadillas</h3>
                 <p>Quick and easy quesadillas perfect for a snack.</p>
@@ -122,11 +156,9 @@
             </div>
         </div>
     </section>
-      </section>
     <footer class="footer">
-        <p>&copy; 2024 Wikifoods! All rights reserved.</p>
+        <p>&copy; 2024 WikiFoods! All rights reserved.</p>
     </footer>
     <script src="main.js"></script>
-</body>
 </body>
 </html>
