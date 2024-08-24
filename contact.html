@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - WikiFoods!</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .content-section {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+        .content-section h2 {
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="find_recipe.html">Find a Recipe</a>
+            <a href="recipe_collection.html">Recipe Collection</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Contact WikiFoods!</h1>
+    </section>
+    <section class="content-section">
+        <h2>We'd Love to Hear From You!</h2>
+        <p>Have a question, suggestion, or just want to say hello? Fill out the form below, and we'll get back to you as soon as possible.</p>
+    </section>
+    <section class="content-section">
+        <form class="contact-form" id="contact-form">
+            <input type="text" name="name" id="name" placeholder="Your Name" required>
+            <input type="email" name="email" id="email" placeholder="Your Email" required>
+            <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <section class="content-section">
+        <h2>Other Ways to Reach Us</h2>
+        <p>Email: support@wikifoods.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
+        <p>Address: 123 Foodie Lane, Flavor Town, CA 90210</p>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 Wikifoods! All rights reserved.</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
