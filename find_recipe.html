@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Recipe - WikiFoods!</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .content-section {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+        .content-section h2 {
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+        .search-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .search-form select,
+        .search-form input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .search-form button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="find_recipe.html">Find a Recipe</a>
+            <a href="recipe_collection.html">Recipe Collection</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Find a Recipe</h1>
+    </section>
+    <section class="content-section">
+        <h2>Discover Your Next Favorite Dish</h2>
+        <form class="search-form" id="recipe-search-form">
+            <label for="meal-type">Meal Type</label>
+            <select id="meal-type">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snack">Snack</option>
+            </select>
+
+            <label for="dietary-restrictions">Dietary Restrictions</label>
+            <select id="dietary-restrictions">
+                <option value="none">None</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="gluten-free">Gluten-Free</option>
+                <option value="nut-free">Nut-Free</option>
+            </select>
+
+            <label for="time-available">Time Available</label>
+            <select id="time-available">
+                <option value="under-30">Under 30 minutes</option>
+                <option value="30-60">30-60 minutes</option>
+                <option value="over-60">Over 60 minutes</option>
+            </select>
+
+            <label for="ingredients">Ingredients</label>
+            <input type="text" id="ingredients" placeholder="e.g., chicken, pasta, cheese" />
+
+            <button type="button" onclick="findRecipe()">Find My Recipe</button>
+        </form>
+    </section>
+    <section class="content-section" id="recipe-results" style="display: none;">
+        <h2>Recipe Results</h2>
+        <div id="recipes-container">
+            <!-- Recipe results will be displayed here -->
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 Wikifoods! All rights reserved.</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
