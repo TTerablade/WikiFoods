@@ -23,13 +23,6 @@ const recipes = [{
     time: "under-30",
     ingredients: ["cheese"]
 }];
-}, {
-    title: "Grilled chez",
-    type: "snack",
-    restrictions: "none",
-    time: "under-30",
-    ingredients: ["cheese"]
-}];
 
 function startRecipeFinder() {
     document.getElementById('recipe-finder').scrollIntoView({
