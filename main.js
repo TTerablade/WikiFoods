@@ -22,12 +22,6 @@ const recipes = [{
     restrictions: "none",
     time: "under-30",
     ingredients: ["cheese"]
-    }, {
-    title: "Girlled cheese",
-    type: "breakfast",
-    restrictions: "dariy ",
-    time: "under-30",
-    ingredients: ["cheese"]
 }];
 
 function startRecipeFinder() {
