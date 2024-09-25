@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WikiFoods! - HOME</title>
+    <title>WikiFoods! - App Downloads</title>
     <link rel="icon" type="image/png" href="images/icon.png">
     <link rel="stylesheet" href="main.css">
     <style>
@@ -55,6 +55,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
         .download-button {
             padding: 15px 30px;
@@ -69,6 +70,10 @@
             text-align: center;
             background-color: #f1f1f1;
             color: #333;
+        }
+        .download-img {
+            width: 150px;
+            height: auto;
         }
     </style>
 </head>
@@ -87,9 +92,15 @@
         <h2>Download the WikiFoods App</h2>
         <p>Get the WikiFoods app on your preferred platform for easy access to all our features.</p>
         <div class="download-buttons">
-            <a href="path/to/android-app.apk" class="download-button">Download for Android</a>
-            <a href="path/to/ios-app.zip" class="download-button">Download for iOS</a>
-            <a href="path/to/windows-app.exe" class="download-button">Download for Windows</a>
+            <!-- Linux Download -->
+            <a href="path/to/linux-app.tar.gz" class="download-button">
+                <img src="path/to/linux.png" alt="Linux" class="download-img"><br>Download for Linux
+            </a>
+            
+            <!-- Windows Download -->
+            <a href="path/to/windows-app.exe" class="download-button">
+                <img src="path/to/windows.png" alt="Windows" class="download-img"><br>Download for Windows
+            </a>
         </div>
     </section>
 
