@@ -64,6 +64,13 @@
             border-radius: 5px;
             overflow: hidden;
             text-align: left;
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Slight downward shift */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .recipe-card.visible {
+            opacity: 1; /* Fade in */
+            transform: translateY(0); /* Move to the original position */
         }
         .recipe-card img {
             width: 100%;
@@ -144,6 +151,30 @@
     <footer class="footer">
         <p>&copy; 2024 WikiFoods! All rights reserved.</p>
     </footer>
-    <script src="main.js"></script>
+
+    <!-- JavaScript to handle the fade-in effect on scroll -->
+    <script>
+        // Function to handle when the elements are in view
+        function revealOnScroll() {
+            const recipeCards = document.querySelectorAll('.recipe-card');
+            const triggerBottom = window.innerHeight / 5 * 4;
+
+            recipeCards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+
+                if(cardTop < triggerBottom) {
+                    card.classList.add('visible');
+                } else {
+                    card.classList.remove('visible');
+                }
+            });
+        }
+
+        // Event listener for scrolling
+        window.addEventListener('scroll', revealOnScroll);
+
+        // Initial call to reveal elements that are already in view
+        revealOnScroll();
+    </script>
 </body>
 </html>
