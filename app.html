@@ -46,6 +46,7 @@
             padding: 20px;
             background-color: #f9f9f9;
             margin-top: 40px;
+            text-align: center;
         }
         .download-section h2 {
             color: #4CAF50;
@@ -54,26 +55,25 @@
         .download-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 40px;
             flex-wrap: wrap;
         }
         .download-button {
-            padding: 15px 30px;
-            background-color: #4CAF50;
-            color: white;
+            text-align: center;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
+            color: #333;
+        }
+        .download-img {
+            width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px auto;
         }
         .footer {
             padding: 10px 20px;
             text-align: center;
             background-color: #f1f1f1;
             color: #333;
-        }
-        .download-img {
-            width: 150px;
-            height: auto;
         }
     </style>
 </head>
@@ -94,12 +94,14 @@
         <div class="download-buttons">
             <!-- Linux Download -->
             <a href="path/to/linux-app.tar.gz" class="download-button">
-                <img src="linux.png" alt="Linux" class="download-img"><br>
+                <img src="linux.png" alt="Linux" class="download-img">
+                <span>Download for Linux</span>
             </a>
             
             <!-- Windows Download -->
             <a href="path/to/windows-app.exe" class="download-button">
-                <img src="windows.png" alt="Windows" class="download-img"><br>
+                <img src="windows.png" alt="Windows" class="download-img">
+                <span>Download for Windows</span>
             </a>
         </div>
     </section>
