@@ -18,44 +18,10 @@
             background-color: red;
             cursor: pointer;
             border-radius: 5px;
-            color: white;
         }
         .button-group button.selected {
             background-color: #4CAF50;
-        }
-        .recipe-card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 1rem;
-            margin-bottom: 20px;
-            text-align: center;
-            width: 300px;
-            position: relative;
-        }
-        .recipe-card img {
-            width: 100%;
-            height: auto;
-        }
-        .recipe-card h3 {
-            color: #ff6f61;
-        }
-        .recipe-card .card-content {
-            position: relative;
-            z-index: 1;
-        }
-        .recipe-details {
-            display: none;
-            text-align: left;
-            background-color: #f9f9f9;
-            padding: 1rem;
-            border-top: 1px solid #ddd;
-        }
-        .recipe-details ul {
-            padding-left: 1.5rem;
-        }
-        .recipe-details ul li {
-            list-style-type: disc;
+            color: white;
         }
     </style>
 </head>
@@ -67,7 +33,6 @@
             <a href="recipe_collection.html">Recipe Collection</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="app.html">Download The App!</a>
         </nav>
     </header>
     <section class="hero">
@@ -109,8 +74,8 @@
                 <button type="button" data-value="sugar">Sugar</button>
                 <button type="button" data-value="beef">Beef</button>
                 <button type="button" data-value="pork">Pork</button>
-                <button type="button" data-value="salt">Salt</button>
-                <button type="button" data-value="garlic-powder">Garlic Powder</button>
+                <button type="button" data-value="Salt">Salt</button>
+                <button type="button" data-value="Garlic Powder">Garlic Powder</button>
             </div>
             <button type="button" onclick="findRecipe()">Find My Recipe</button>
         </form>
@@ -122,68 +87,25 @@
     <section class="featured-recipes">
         <h2>Featured Recipes</h2>
         <div class="recipe-card">
-            <img src="images/easypancakes.png" alt="Easy Pancakes">
+            <img src="images/easypancakes.png" alt="Recipe 1">
             <div class="card-content">
                 <h3>Easy Pancakes</h3>
                 <p>Fluffy and delicious pancakes that are quick to make!</p>
-                <a href="javascript:void(0)" onclick="toggleDetails(this)">See Recipe</a>
-            </div>
-            <div class="recipe-details">
-                <h4>Ingredients:</h4>
-                <ul>
-                    <li>1 cup flour</li>
-                    <li>2 tablespoons sugar</li>
-                    <li>1 teaspoon baking powder</li>
-                    <li>1 egg</li>
-                    <li>1 cup milk</li>
-                </ul>
-                <h4>Steps:</h4>
-                <ul>
-                    <li>Mix dry ingredients together.</li>
-                    <li>Add wet ingredients and stir until smooth.</li>
-                    <li>Cook on a greased pan until golden brown.</li>
-                </ul>
+                <a href="#">See Recipe</a>
             </div>
         </div>
         <div class="recipe-card">
-            <img src="images/chickenstirfry.png" alt="Chicken Stir Fry">
+            <img src="images/chickenstirfry.png" alt="Recipe 2">
             <div class="card-content">
                 <h3>Chicken Stir Fry</h3>
                 <p>A tasty and colorful stir fry with simple ingredients.</p>
-                <a href="javascript:void(0)" onclick="toggleDetails(this)">See Recipe</a>
-            </div>
-            <div class="recipe-details">
-                <h4>Ingredients:</h4>
-                <ul>
-                    <li>2 chicken breasts</li>
-                    <li>1 bell pepper</li>
-                    <li>1 onion</li>
-                    <li>2 tablespoons soy sauce</li>
-                    <li>1 tablespoon olive oil</li>
-                </ul>
-                <h4>Steps:</h4>
-                <ul>
-                    <li>Slice the chicken and vegetables.</li>
-                    <li>Heat oil in a pan and cook chicken.</li>
-                    <li>Add vegetables and soy sauce, stir-fry until cooked.</li>
-                </ul>
+                <a href="#">See Recipe</a>
             </div>
         </div>
     </section>
     <footer class="footer">
         <p>&copy; 2024 Wikifoods! All rights reserved.</p>
     </footer>
-
-    <script>
-        // Function to toggle the visibility of recipe details
-        function toggleDetails(element) {
-            const details = element.parentElement.nextElementSibling;
-            if (details.style.display === "block") {
-                details.style.display = "none";
-            } else {
-                details.style.display = "block";
-            }
-        }
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
