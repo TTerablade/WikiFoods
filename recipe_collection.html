@@ -24,27 +24,6 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .header .logo {
-            height: 50px;
-            width: auto;
-        }
-
-        .header .nav-links {
-            margin-top: 1rem;
-        }
-
-        .header .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 10px;
-            font-size: 1em;
-        }
-
-        .header .nav-links a:hover {
-            text-decoration: underline;
-        }
-
         h1 {
             text-align: center;
             color: #ff6f61;
@@ -103,9 +82,16 @@
         }
 
         .ingredients, .steps {
-            display: none;
+            display: none; /* Start hidden */
             padding: 10px;
             text-align: left;
+            opacity: 0; /* For fade effect */
+            transition: opacity 0.3s ease; /* Fade transition */
+        }
+
+        .show {
+            display: block;
+            opacity: 1; /* Fully visible when shown */
         }
 
         .footer {
@@ -201,13 +187,13 @@
                 const ingredients = this.nextElementSibling;
                 const steps = ingredients.nextElementSibling;
                 
-                // Toggle the display of ingredients and steps
-                if (ingredients.style.display === 'block') {
-                    ingredients.style.display = 'none';
-                    steps.style.display = 'none';
+                // Toggle the display of ingredients and steps with fade effect
+                if (ingredients.classList.contains('show')) {
+                    ingredients.classList.remove('show');
+                    steps.classList.remove('show');
                 } else {
-                    ingredients.style.display = 'block';
-                    steps.style.display = 'block';
+                    ingredients.classList.add('show');
+                    steps.classList.add('show');
                 }
             });
         });
