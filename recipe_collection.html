@@ -24,6 +24,27 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
+        .header .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .header .nav-links {
+            margin-top: 1rem;
+        }
+
+        .header .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            font-size: 1em;
+        }
+
+        .header .nav-links a:hover {
+            text-decoration: underline;
+        }
+
         h1 {
             text-align: center;
             color: #ff6f61;
@@ -74,24 +95,11 @@
             color: #ff6f61;
             text-decoration: none;
             font-weight: bold;
-            cursor: pointer;
+            transition: color 0.3s ease;
         }
 
         .recipe-card a:hover {
             color: #e55f50;
-        }
-
-        .ingredients, .steps {
-            display: none; /* Start hidden */
-            padding: 10px;
-            text-align: left;
-            opacity: 0; /* For fade effect */
-            transition: opacity 0.3s ease; /* Fade transition */
-        }
-
-        .show {
-            display: block;
-            opacity: 1; /* Fully visible when shown */
         }
 
         .footer {
@@ -111,92 +119,49 @@
             <a href="recipe_collection.html">Recipe Collection</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="app.html">Download The App!</a>
+             <a href="app.html">Download The App!</a>
         </nav>
     </header>
     <h1>Recipe Collection</h1>
     <section class="gallery">
-        <!-- Recipe Card 1 -->
         <div class="recipe-card">
             <img src="images/easypancakes.png" alt="Easy Pancakes">
             <div class="card-content">
                 <h3>Easy Pancakes</h3>
                 <p>Fluffy and delicious pancakes that are quick to make!</p>
-                <a class="toggle-recipe" href="#">See Recipe</a>
-                <div class="ingredients">
-                    <h4>Ingredients</h4>
-                    <ul>
-                        <li>2 cups all-purpose flour</li>
-                        <li>2 tablespoons sugar</li>
-                        <li>1 tablespoon baking powder</li>
-                        <li>1/2 teaspoon salt</li>
-                        <li>2 cups milk</li>
-                        <li>2 eggs</li>
-                    </ul>
-                </div>
-                <div class="steps">
-                    <h4>Steps</h4>
-                    <ol>
-                        <li>Mix dry ingredients in a bowl.</li>
-                        <li>Add milk and eggs, whisk until smooth.</li>
-                        <li>Heat a pan, pour batter, and cook until golden brown.</li>
-                        <li>Flip and cook the other side.</li>
-                    </ol>
-                </div>
+                <a href="#">See Recipe</a>
             </div>
         </div>
-
-        <!-- Recipe Card 2 -->
         <div class="recipe-card">
             <img src="images/chickenstirfry.png" alt="Chicken Stir Fry">
             <div class="card-content">
                 <h3>Chicken Stir Fry</h3>
                 <p>A tasty and colorful stir fry with simple ingredients.</p>
-                <a class="toggle-recipe" href="#">See Recipe</a>
-                <div class="ingredients">
-                    <h4>Ingredients</h4>
-                    <ul>
-                        <li>1 lb chicken breast</li>
-                        <li>2 cups mixed vegetables</li>
-                        <li>2 tablespoons soy sauce</li>
-                        <li>1 tablespoon olive oil</li>
-                        <li>1 teaspoon ginger</li>
-                    </ul>
-                </div>
-                <div class="steps">
-                    <h4>Steps</h4>
-                    <ol>
-                        <li>Slice chicken thinly and season with soy sauce.</li>
-                        <li>Heat oil in a pan, cook chicken until browned.</li>
-                        <li>Add vegetables and stir-fry for 5 minutes.</li>
-                        <li>Serve hot with rice or noodles.</li>
-                    </ol>
-                </div>
+                <a href="#">See Recipe</a>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <img src="images/vegetarianpasta.png" alt="Vegetarian Pasta">
+            <div class="card-content">
+                <h3>Vegetarian Pasta</h3>
+                <p>A delightful pasta dish with fresh vegetables.</p>
+                <a href="#">See Recipe</a>
+            </div>
+        </div>
+        <div class="recipe-card">
+            <img src="images/cheesequesadillas.png" alt="Cheese Quesadillas">
+            <div class="card-content">
+                <h3>Cheese Quesadillas</h3>
+                <p>Quick and easy quesadillas perfect for a snack.</p>
+                <a href="#">See Recipe</a>
             </div>
         </div>
     </section>
     <footer class="footer">
         <p>&copy; 2024 WikiFoods! All rights reserved.</p>
     </footer>
-
-    <script>
-        // Add event listeners to all "See Recipe" links
-        document.querySelectorAll('.toggle-recipe').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const ingredients = this.nextElementSibling;
-                const steps = ingredients.nextElementSibling;
-                
-                // Toggle the display of ingredients and steps with fade effect
-                if (ingredients.classList.contains('show')) {
-                    ingredients.classList.remove('show');
-                    steps.classList.remove('show');
-                } else {
-                    ingredients.classList.add('show');
-                    steps.classList.add('show');
-                }
-            });
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
+
+
